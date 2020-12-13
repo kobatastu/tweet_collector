@@ -4,10 +4,10 @@ import config from 'config';
 import { isTrend, isTweet } from './type';
 
 const client = new Twitter({
-  consumer_key: config.get<string>('TWITTER.consumer_key'),
-  consumer_secret: config.get<string>('TWITTER.consumer_secret'),
-  access_token_key: config.get<string>('TWITTER.access_token_key'),
-  access_token_secret: config.get<string>('TWITTER.access_token_secret'),
+  consumer_key: config.get<string>('TWITTER.CONSUMER_KEY'),
+  consumer_secret: config.get<string>('TWITTER.CONSUMER_SECRET'),
+  access_token_key: config.get<string>('TWITTER.ACCESS_TOKEN_KEY'),
+  access_token_secret: config.get<string>('TWITTER.ACCESS_TOKEN_SECRET'),
 });
 
 const twitterPromise = (requestPath: string, params: { id: number } | { q: string }) => {
