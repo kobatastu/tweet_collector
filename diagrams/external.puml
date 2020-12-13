@@ -1,0 +1,22 @@
+@startuml
+title BEとのやり取り
+control BackEnd #LightGreen
+control CloudRun #Orange
+database Firestore #Orange
+BackEnd -> CloudRun : GET(year,month,date,hour)
+activate CloudRun
+CloudRun -> Firestore : GET(year,month,date,hour)
+activate Firestore
+CloudRun <- Firestore : twitter trend データ
+deactivate Firestore
+BackEnd <- CloudRun : twitter trend データ
+deactivate CloudRun
+BackEnd -> CloudRun : GET(year,month,date,hour,trend)
+activate CloudRun
+CloudRun -> Firestore : GET(year,month,date,hour,trend)
+activate Firestore
+CloudRun <- Firestore : twitter tweet データ
+deactivate Firestore
+BackEnd <- CloudRun : twitter tweet データ
+deactivate CloudRun
+@enduml

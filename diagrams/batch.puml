@@ -1,0 +1,30 @@
+@startuml
+title twitterトレンド集計バッチ
+control CloudScheduler #Orange
+boundary CloudTasks #Orange
+control CloudRun #Orange
+database Firestore #Orange
+control TwitterAPI #Blue
+CloudRun <- CloudScheduler : triger
+activate CloudRun
+CloudRun -> CloudTasks : enqueue
+activate CloudTasks
+deactivate CloudTasks
+deactivate CloudRun
+CloudTasks -> CloudRun : dispatch
+activate CloudTasks
+activate CloudRun
+CloudRun -> TwitterAPI : GET(id)
+activate TwitterAPI
+CloudRun <- TwitterAPI : trendデータ
+deactivate TwitterAPI
+CloudRun -> Firestore : SET(year,month,date,hour,trend)
+CloudRun -> TwitterAPI : GET(word)
+activate TwitterAPI
+CloudRun <- TwitterAPI : word tweet検索データ
+deactivate TwitterAPI
+CloudRun -> Firestore : SET(year,month,date,hour,tweet)
+CloudRun -> CloudTasks : finish
+deactivate CloudRun
+deactivate CloudTasks
+@enduml

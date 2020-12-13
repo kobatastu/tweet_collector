@@ -1,0 +1,4 @@
+queue:
+  - name: set-each-trend-twitter-word
+    bucket_size: 5
+    rate: 25/s
