@@ -1,16 +1,4 @@
 steps:
-  # # ビルド対象のディレクトリが .git を含まないため、後段の git submodule コマンド実行時にエラーになる
-  # # git init を行って git ディレクトリであるように偽装する
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args:
-  #     - 'init'
-  # # submodule (common-config) を取得
-  # # - source repository へのアクセス権限は cloudbuild 実行アカウントに付与されている
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args:
-  #     - 'submodule'
-  #     - 'update'
-  #     - '--init'
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'build'

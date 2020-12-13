@@ -55,26 +55,3 @@ export const getTweet = async (word: string) => {
   );
   return result;
 };
-
-// export const getTweet = (word: string) => {
-//   const params = { q: word };
-//   const searchedTweets = { tweetWord: word, tweetTextArray: [] };
-//   client.get('search/tweets', params, (error, tweets) => {
-//     if (error) throw new Error(`runtime: ${error}`);
-//     if (tweets.statuses.length === 0) return null;
-//     tweets.statuses.map((tweet) => searchedTweets.tweetTextArray.push(tweet.text));
-//     if (searchedTweets.tweetTextArray.length === 0) return null;
-//     return searchedTweets;
-//   });
-// };
-
-// export const getTrend = () => {
-//   const searchedTrends = [];
-//   client.get('trends/place.json', regionId, (error, tweets) => {
-//     if (error) throw new Error(`runtime: ${error}`);
-//     if (tweets.length === 0 || tweets[0].trends.length === 0) return null;
-//     tweets[0].trends.map((trend) => searchedTrends.push(trend.name));
-//     if (searchedTrends.length === 0) return null;
-//     return searchedTrends;
-//   });
-// };
