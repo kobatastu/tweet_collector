@@ -1,5 +1,4 @@
 @startuml
-title twitterトレンド集計バッチ
 control CloudScheduler #Orange
 boundary CloudTasks #Orange
 control CloudRun #Orange

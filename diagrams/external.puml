@@ -1,5 +1,4 @@
 @startuml
-title BEとのやり取り
 control BackEnd #LightGreen
 control CloudRun #Orange
 database Firestore #Orange

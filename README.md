@@ -1,5 +1,12 @@
 # tweet_collector
 
+## 構成図
+
+### batch
+![tweet_collector](./diagrams/batch.svg)
+### 外部api
+![tweet_collector](./diagrams/external.svg)
+
 ## セットアップ
 
 ### GCPのセットアップ
