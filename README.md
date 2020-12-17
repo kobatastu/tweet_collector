@@ -31,3 +31,15 @@ $ gcloud init
 ```
 $ gcloud auth application-default login
 ```
+
+## Cloud Build & Cloud Run へのデプロイ
+
+### Cloud Build
+
+```
+$ npm run build-image
+```
+
+### Cloud Run
+
+GCPのGUIから行う
