@@ -11,9 +11,7 @@
 
 ### GCPのセットアップ
 
-#### google-cloud-sdk
-
-インストール
+google-cloud-sdkのインストール
 
 ```
 $ curl https://sdk.cloud.google.com | bash
@@ -30,6 +28,26 @@ $ gcloud init
 
 ```
 $ gcloud auth application-default login
+```
+
+### configの作成
+
+git cloneした場合、config/default.jsに以下のファイルが必要
+
+```
+module.exports = {
+  TWITTER: {
+    CONSUMER_KEY: 'twitterのapi key',
+    CONSUMER_SECRET: 'twitterのsecret key',
+    ACCESS_TOKEN_KEY: 'twitterのaccess token',
+    ACCESS_TOKEN_SECRET: 'twitterのaccess token secret',
+  },
+  TASKS: {
+    PROJECT_ID: 'GCPのプロジェクト名',
+    LOCATION: 'Cloud Runのリージョン',
+    URL: 'デプロイしたCloud RunのURL',
+  },
+};
 ```
 
 ## Cloud Build & Cloud Run へのデプロイ
