@@ -5,7 +5,7 @@ ARG PORT
 
 # Dockerコンテナの設定
 RUN mkdir -p /tweet_collector
-WORKDIR /luigi
+WORKDIR /tweet_collector
 EXPOSE ${PORT}
 
 # npm install をキャッシュするために、最初に package*.json のみADDして npm install している
